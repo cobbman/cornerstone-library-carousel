@@ -1,10 +1,10 @@
 <?php
 
-class Custom_Horizontal_Scroll_Item extends Cornerstone_Element_Base {
+class CSL_Horizontal_Scroll_Item extends Cornerstone_Element_Base {
 
   public function data() {
     return array(
-      'name'        => 'csl-horiz-scroll-item',
+      'name'        => 'csl-horizontal-scroll-item',
       'title'       => __( 'Scroll Item', csl18n() ),
       'section'     => '_content',
       'description' => __( 'Scroll Item description.', csl18n() ),

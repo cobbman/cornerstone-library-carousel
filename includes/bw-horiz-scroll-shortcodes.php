@@ -11,7 +11,7 @@ function bigwilliamScrollingElementShortcode( $atts, $content = null ) {
     'class' => '',
     'style' => '',
     'speed' => ''
-  ), $atts, 'bw-horizontal-scroll' ) );
+  ), $atts, 'csl-horizontal-scroll' ) );
 
   $id     = ( $id    != '' ) ? 'id="' . esc_attr( $id ) . '"' : '';
   $class  = ( $class != '' ) ? 'class="bw-horiz-scroll ' . esc_attr( $class ) . '"' : 'class="bw-horiz-scroll"';
@@ -28,7 +28,8 @@ function bigwilliamScrollingElementShortcode( $atts, $content = null ) {
 					auto: true,
 					manualMode: \'loop\',
           frameRate: 30,
-					speed: 1
+					speed: 1,
+          pauseOnHover: false
 				});
 			});
 		})(jQuery);
@@ -39,7 +40,7 @@ function bigwilliamScrollingElementShortcode( $atts, $content = null ) {
 
   return $output;
 }
-add_shortcode( 'bw-horizontal-scroll', 'bigwilliamScrollingElementShortcode' );
+add_shortcode( 'csl-horizontal-scroll', 'bigwilliamScrollingElementShortcode' );
 
 
 function bigwilliamScrollingElementItemShortcode( $atts, $content = null ) {
@@ -48,7 +49,7 @@ function bigwilliamScrollingElementItemShortcode( $atts, $content = null ) {
     'id'    => '',
     'class' => '',
     'style' => ''
-  ), $atts, 'bw-horizontal-scroll-item' ) );
+  ), $atts, 'csl-horizontal-scroll-item' ) );
 
   $id    = ( $id    != '' ) ? 'id="' . esc_attr( $id ) . '"' : '';
   $class = ( $class != '' ) ? 'class="' . esc_attr( $class ) . '"' : '';
@@ -59,5 +60,5 @@ function bigwilliamScrollingElementItemShortcode( $atts, $content = null ) {
 
   return $output;
 }
-add_shortcode( 'bw-horizontal-scroll-item', 'bigwilliamScrollingElementItemShortcode' );
+add_shortcode( 'csl-horizontal-scroll-item', 'bigwilliamScrollingElementItemShortcode' );
 

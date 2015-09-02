@@ -1,6 +1,6 @@
 <?php
 
-class Custom_Horizontal_Scroll extends Cornerstone_Element_Base {
+class CSL_Horizontal_Scroll extends Cornerstone_Element_Base {
 
   public function data() {
     return array(
@@ -9,7 +9,7 @@ class Custom_Horizontal_Scroll extends Cornerstone_Element_Base {
       'section'     => 'content',
       'description' => __( 'Scrolls content horizontally.', csl18n() ),
       'supports'    => array( 'id', 'class', 'style' ),
-      'childType'   => 'csl-horiz-scroll-item',
+      'childType'   => 'csl-horizontal-scroll-item',
       'renderChild' => true
     );
   }
@@ -70,11 +70,11 @@ class Custom_Horizontal_Scroll extends Cornerstone_Element_Base {
         'style' => $e['style']
       ) );
 
-      $contents .= '[bw-horizontal-scroll-item'  . $item_extra . ']' . $e['content'] . '[/bw-horizontal-scroll-item]';
+      $contents .= '[csl-horizontal-scroll-item'  . $item_extra . ']' . $e['content'] . '[/csl-horizontal-scroll-item]';
 
     }
 
-    $shortcode = "[bw-horizontal-scroll {$extra}]{$contents}[/bw-horizontal-scroll]";
+    $shortcode = "[csl-horizontal-scroll {$extra}]{$contents}[/csl-horizontal-scroll]";
 
     return $shortcode;
 
