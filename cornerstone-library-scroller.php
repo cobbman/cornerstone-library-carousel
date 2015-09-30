@@ -27,16 +27,14 @@ add_action( 'wp_enqueue_scripts', 'csl_horiz_scroll_scripts', 100 );
 
 
 // shortcodes
-require_once('includes/bw-horiz-scroll-shortcodes.php');
+require_once('shortcodes/bw-horiz-scroll-shortcodes.php');
 
 
 /*
  * => ADD ELEMENTS TO CORNERSTONE
  * ---------------------------------------------------------------------------*/
-add_action( 'cornerstone_load_elements', 'bw_cornerstone_horiz_scroll' );
-function bw_cornerstone_horiz_scroll() {
-	require_once( 'includes/bw-horiz-scroll-element.php' );
-	require_once( 'includes/bw-horiz-scroll-element-item.php' );
-  cornerstone_add_element( 'CSL_Horizontal_Scroll' );
-  cornerstone_add_element( 'CSL_Horizontal_Scroll_Item' );
+add_action( 'cornerstone_load_elements', 'csl_horizontal_scroll' );
+function csl_horizontal_scroll() {
+	require_once( 'elements/bw-horiz-scroll-element.php' );
+	require_once( 'elements/bw-horiz-scroll-element-item.php' );
 }

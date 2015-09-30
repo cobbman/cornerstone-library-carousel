@@ -51,3 +51,4 @@ class CSL_Horizontal_Scroll_Item extends Cornerstone_Element_Base {
   // }
 
 }
+cornerstone_add_element( 'CSL_Horizontal_Scroll_Item' );
