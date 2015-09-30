@@ -1,0 +1,3 @@
+[submodule "assets/js/carouFredSel"]
+	path = assets/js/carouFredSel
+	url = git@github.com:gilbitron/carouFredSel.git
