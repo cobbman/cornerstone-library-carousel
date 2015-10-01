@@ -8,6 +8,8 @@ Author:      BigWilliam
 Author URI:  http://bigwilliam.com
 Author Email: hello@bigwilliam.com
 Text Domain: __x__
+
+CarouFredSel Documentation: http://docs.dev7studios.com/jquery-plugins/caroufredsel
 */
 
 
@@ -17,11 +19,15 @@ if ( ! defined( 'WPINC' ) ) die;
 
 
 /*
- * => Enqueue Scripts
+ * => ENQUEUE SCRIPTS
  * ---------------------------------------------------------------------------*/
 function csl_horiz_scroll_scripts() {
-	wp_enqueue_script( 'caroufredsel', plugins_url('/assets/js/jquery.simplyscroll.min.js', __FILE__ ), array('jquery'), null, true );
-	wp_enqueue_style('csl-scroll-css', plugins_url('/assets/css/custom.css', __FILE__ ), array(), '1.0' );
+	wp_enqueue_script( 'caroufredsel', plugins_url('/assets/js/carouFredSel/jquery.carouFredSel-6.2.1.js', __FILE__ ), array('jquery'), null, true );
+	// wp_enqueue_script( 'touchswipe', plugins_url('/assets/js/carouFredSel/helper-plugins/jquery.touchSwipe.min.js', __FILE__ ), array('jquery'), null, true );
+
+	// wp_enqueue_script( 'caroufredsel-launcher', plugins_url('/assets/js/custom.js', __FILE__ ), array('jquery'), null, true );
+	
+	// wp_enqueue_style('csl-scroll-css', plugins_url('/assets/css/custom.css', __FILE__ ), array(), '1.0' );
 }
 add_action( 'wp_enqueue_scripts', 'csl_horiz_scroll_scripts', 100 );
 
@@ -33,8 +39,8 @@ require_once('shortcodes/bw-horiz-scroll-shortcodes.php');
 /*
  * => ADD ELEMENTS TO CORNERSTONE
  * ---------------------------------------------------------------------------*/
-add_action( 'cornerstone_load_elements', 'csl_horizontal_scroll' );
 function csl_horizontal_scroll() {
 	require_once( 'elements/bw-horiz-scroll-element.php' );
 	require_once( 'elements/bw-horiz-scroll-element-item.php' );
 }
+add_action( 'cornerstone_load_elements', 'csl_horizontal_scroll' );

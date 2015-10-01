@@ -4,46 +4,60 @@
  *========================================================================*/
 
 
-function bigwilliamScrollingElementShortcode( $atts, $content = null ) {
+function CornerstoneLibraryScrollingElement_Shortcode( $atts, $content = null ) {
 
 	extract( shortcode_atts( array(
     'id'    => '',
     'class' => '',
     'style' => '',
-    'speed' => ''
+    'numitems' => '',
+    'duration' => ''
   ), $atts, 'csl-horizontal-scroll' ) );
 
   $id     = ( $id    != '' ) ? 'id="' . esc_attr( $id ) . '"' : '';
-  $class  = ( $class != '' ) ? 'class="bw-horiz-scroll ' . esc_attr( $class ) . '"' : 'class="bw-horiz-scroll"';
+  $class  = ( $class != '' ) ? 'class="csl-horiz-scroll ' . esc_attr( $class ) . '"' : 'class="csl-horiz-scroll"';
   $style  = ( $style != '' ) ? 'style="' . $style . '"' : '';
-
+  $numitems = ( $numitems != '' ) ? $numitems : 3;
+  $duration = ( $duration != '' ) ? $duration : 700;
   $randnum = rand(0,1000);
 
-  $output = "<div {$id} {$class} {$style}>";
 
-	$output .= '<script type="text/javascript">
-		(function($) {
-			$(function() {
-				$("#scroller'.$randnum.'").simplyScroll({
-					auto: true,
-					manualMode: \'loop\',
-          frameRate: 30,
-					speed: 1,
-          pauseOnHover: false
-				});
-			});
-		})(jQuery);
-	</script>';
+  $output = "<div {$id} {$class} {$style}>"
+              . "<div id='caroufredsel-{$randnum}'>" . do_shortcode( $content ) . "</div>"
+          . "</div>"
+          . "<script type=\"text/javascript\">"
+            . "jQuery(document).ready(function($) {
+                $('#caroufredsel-{$randnum}').carouFredSel({
+                  items     : {$numitems},
+                  direction : 'left',
+                  responsive: true,
+                  scroll    : {
+                    items        : 1,
+                    easing       : 'swing',
+                    duration     : {$duration},
+                    pauseOnHover : false
+                  },
+                  /*swipe : {
+                    onTouch : true,
+                    onMouse : true
+                  }*/
+                });
+              });"
+          . "</script>";
 
-  $output .= "<ul id=\"scroller".$randnum."\">" . do_shortcode( $content ) . "</ul>";
-  $output .= "</div>";
 
   return $output;
 }
-add_shortcode( 'csl-horizontal-scroll', 'bigwilliamScrollingElementShortcode' );
+add_shortcode( 'csl-horizontal-scroll', 'CornerstoneLibraryScrollingElement_Shortcode' );
 
 
-function bigwilliamScrollingElementItemShortcode( $atts, $content = null ) {
+
+
+/* The individual items */
+
+
+
+function CornerstoneLibraryScrollingElement_Item_Shortcode( $atts, $content = null ) {
 	
 	extract( shortcode_atts( array(
     'id'    => '',
@@ -53,12 +67,12 @@ function bigwilliamScrollingElementItemShortcode( $atts, $content = null ) {
 
   $id    = ( $id    != '' ) ? 'id="' . esc_attr( $id ) . '"' : '';
   $class = ( $class != '' ) ? 'class="' . esc_attr( $class ) . '"' : '';
-  $style = ( $style != '' ) ? 'style="' . $style . '"' : '';
+  $style = ( $style != '' ) ? 'style="float:left; ' . $style . '"' : 'style="float:left;"';
 
 
-  $output = "<li {$id} {$class} {$style}>" . do_shortcode( $content ) . "</li>";
+  $output = "<div {$id} {$class} {$style}>" . do_shortcode( $content ) . "</div>";
 
   return $output;
 }
-add_shortcode( 'csl-horizontal-scroll-item', 'bigwilliamScrollingElementItemShortcode' );
+add_shortcode( 'csl-horizontal-scroll-item', 'CornerstoneLibraryScrollingElement_Item_Shortcode' );
 

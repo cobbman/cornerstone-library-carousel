@@ -17,6 +17,24 @@ class CSL_Horizontal_Scroll extends Cornerstone_Element_Base {
   public function controls() {
 
     $this->addControl(
+      'numitems',
+      'number',
+      __( 'Number of items to show at once', csl18n() ),
+      __( 'Number of items to show at once', csl18n() ),
+      3,
+      ''
+    );
+
+    $this->addControl(
+      'duration',
+      'number',
+      __( 'Milliseconds between scroll movements', csl18n() ),
+      __( '1 second = 1000 milliseconds', csl18n() ),
+      700,
+      ''
+    );
+
+    $this->addControl(
       'elements',
       'sortable',
       __( 'Scroll Items', csl18n() ),
@@ -30,29 +48,6 @@ class CSL_Horizontal_Scroll extends Cornerstone_Element_Base {
         'floor'    => 2
       )
     );
-
-
-    // $this->addControl(
-    //   'speed',
-    //   'select',
-    //   __( 'Speed', csl18n() ),
-    //   __( 'Select a scroll speed. Higher is faster. 1 is usually good.', csl18n() ),
-    //   '1',
-    //   array(
-    //     'choices' => array(
-    //       array( 'value' => '1',  'label' => __( '1', csl18n() ) ),
-    //       array( 'value' => '2',  'label' => __( '2', csl18n() ) ),
-    //       array( 'value' => '3',  'label' => __( '3', csl18n() ) ),
-    //       array( 'value' => '4',  'label' => __( '4', csl18n() ) ),
-    //       array( 'value' => '5',  'label' => __( '5', csl18n() ) ),
-    //       array( 'value' => '6',  'label' => __( '6', csl18n() ) ),
-    //       array( 'value' => '7',  'label' => __( '7', csl18n() ) ),
-    //       array( 'value' => '8',  'label' => __( '8', csl18n() ) ),
-    //       array( 'value' => '9',  'label' => __( '9', csl18n() ) ),
-    //       array( 'value' => '10', 'label' => __( '10', csl18n() ) )
-    //     )
-    //   )
-    // );
 
   }
 
@@ -74,7 +69,7 @@ class CSL_Horizontal_Scroll extends Cornerstone_Element_Base {
 
     }
 
-    $shortcode = "[csl-horizontal-scroll {$extra}]{$contents}[/csl-horizontal-scroll]";
+    $shortcode = "[csl-horizontal-scroll numitems=\"{$numitems}\" duration=\"{$duration}\" {$extra}]{$contents}[/csl-horizontal-scroll]";
 
     return $shortcode;
 
