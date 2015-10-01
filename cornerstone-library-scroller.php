@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Cornerstone Library: Horizontal Scrolling Elements
+Plugin Name: Cornerstone Library: Horizontal Scrolling Carousel
 Plugin URI:  http://bigwilliam.com/
-Description: Adds a horizontal scrolling element to the Cornerstone Page builder, based on http://docs.dev7studios.com/jquery-plugins/caroufredsel. Download plugin at http://cornerstonelibrary.com
-Version:     0.1
+Description: Adds a horizontal scrolling element to the Cornerstone Page builder, based on <a href="http://docs.dev7studios.com/jquery-plugins/caroufredsel" target="_blank">Dev7Studios CarouFredSel</a>. Download plugin at <a href="http://cornerstonelibrary.com" target="_blank">Cornerstone Library</a>
+Version:     0.4
 Author:      BigWilliam
 Author URI:  http://bigwilliam.com
 Author Email: hello@bigwilliam.com

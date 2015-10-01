@@ -17,6 +17,21 @@ class CSL_Horizontal_Scroll extends Cornerstone_Element_Base {
   public function controls() {
 
     $this->addControl(
+      'elements',
+      'sortable',
+      __( 'Scroll Items', csl18n() ),
+      __( 'Add a new item.', csl18n() ),
+      array(
+        array( 'title' => __( 'Scroll item 1', csl18n() ) ),
+        array( 'title' => __( 'Scroll item 2', csl18n() ) )
+      ),
+      array(
+        'newTitle' => __( 'Scroll item %s', csl18n() ),
+        'floor'    => 2
+      )
+    );
+
+    $this->addControl(
       'numitems',
       'number',
       __( 'Number of items to show at once', csl18n() ),
@@ -32,21 +47,6 @@ class CSL_Horizontal_Scroll extends Cornerstone_Element_Base {
       __( '1 second = 1000 milliseconds', csl18n() ),
       700,
       ''
-    );
-
-    $this->addControl(
-      'elements',
-      'sortable',
-      __( 'Scroll Items', csl18n() ),
-      __( 'Add a new item.', csl18n() ),
-      array(
-        array( 'title' => __( 'Scroll item 1', csl18n() ) ),
-        array( 'title' => __( 'Scroll item 2', csl18n() ) )
-      ),
-      array(
-        'newTitle' => __( 'Scroll item %s', csl18n() ),
-        'floor'    => 2
-      )
     );
 
   }
