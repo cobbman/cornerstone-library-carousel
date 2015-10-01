@@ -5,7 +5,7 @@ class CSL_Horizontal_Scroll extends Cornerstone_Element_Base {
   public function data() {
     return array(
       'name'        => 'csl-horizontal-scroll',
-      'title'       => __( 'CSL Horizontal Scroll', csl18n() ),
+      'title'       => __( 'Scrolling Carousel', csl18n() ),
       'section'     => 'content',
       'description' => __( 'Scrolls content horizontally.', csl18n() ),
       'supports'    => array( 'id', 'class', 'style' ),
