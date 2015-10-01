@@ -62,12 +62,19 @@ function CornerstoneLibraryScrollingElement_Item_Shortcode( $atts, $content = nu
 	extract( shortcode_atts( array(
     'id'    => '',
     'class' => '',
-    'style' => ''
+    'style' => '',
+    'auto_valign' => 1
   ), $atts, 'csl-horizontal-scroll-item' ) );
+
+  if ( $auto_valign === 'true' ) {
+    $flex = "display:flex; align-items:center; justify-content:center; height:100%;";
+  } else {
+    $flex = '';
+  }
 
   $id    = ( $id    != '' ) ? 'id="' . esc_attr( $id ) . '"' : '';
   $class = ( $class != '' ) ? 'class="' . esc_attr( $class ) . '"' : '';
-  $style = ( $style != '' ) ? 'style="float:left; ' . $style . '"' : 'style="float:left;"';
+  $style = ( $style != '' ) ? 'style="float:left; ' . $flex . $style . '"' : 'style="float:left; ' . $flex . '"';
 
 
   $output = "<div {$id} {$class} {$style}>" . do_shortcode( $content ) . "</div>";

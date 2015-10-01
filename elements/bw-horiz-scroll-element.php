@@ -49,6 +49,14 @@ class CSL_Horizontal_Scroll extends Cornerstone_Element_Base {
       ''
     );
 
+    $this->addControl(
+      'auto_valign',
+      'toggle',
+      __( 'Automatically Vertical Center Items?', csl18n() ),
+      __( 'Uses CSS Flex attribute to vertically position items in the middle', csl18n() ),
+      true
+    );
+
   }
 
   public function render( $atts ) {
@@ -65,7 +73,7 @@ class CSL_Horizontal_Scroll extends Cornerstone_Element_Base {
         'style' => $e['style']
       ) );
 
-      $contents .= '[csl-horizontal-scroll-item'  . $item_extra . ']' . $e['content'] . '[/csl-horizontal-scroll-item]';
+      $contents .= '[csl-horizontal-scroll-item'  .  ' auto_valign=' . $auto_valign . $item_extra . ']' . $e['content'] . '[/csl-horizontal-scroll-item]';
 
     }
 
