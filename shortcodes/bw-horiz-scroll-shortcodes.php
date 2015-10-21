@@ -31,6 +31,7 @@ function CornerstoneLibraryScrollingElement_Shortcode( $atts, $content = null ) 
                   items     : {$numitems},
                   direction : 'left',
                   responsive: true,
+                  height: 'auto',
                   scroll    : {
                     items        : 1,
                     easing       : 'swing',
