@@ -22,7 +22,7 @@ if ( ! defined( 'WPINC' ) ) die;
  * => ENQUEUE SCRIPTS
  * ---------------------------------------------------------------------------*/
 function csl_horiz_scroll_scripts() {
-	wp_enqueue_script( 'caroufredsel', plugins_url('/assets/js/carouFredSel/jquery.carouFredSel-6.2.1.js', __FILE__ ), array('jquery'), null, true );
+	wp_enqueue_script( 'caroufredsel', plugins_url('/assets/js/carouFredSel/jquery.carouFredSel-6.2.1-packed.js', __FILE__ ), array('jquery'), null, true );
 	// wp_enqueue_script( 'touchswipe', plugins_url('/assets/js/carouFredSel/helper-plugins/jquery.touchSwipe.min.js', __FILE__ ), array('jquery'), null, true );
 
 	// wp_enqueue_script( 'caroufredsel-launcher', plugins_url('/assets/js/custom.js', __FILE__ ), array('jquery'), null, true );
