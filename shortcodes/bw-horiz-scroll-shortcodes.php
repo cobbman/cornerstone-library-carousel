@@ -11,7 +11,8 @@ function CornerstoneLibraryScrollingElement_Shortcode( $atts, $content = null ) 
     'class' => '',
     'style' => '',
     'numitems' => '',
-    'duration' => ''
+    'duration' => '',
+    'height'   => ''
   ), $atts, 'csl-horizontal-scroll' ) );
 
   $id     = ( $id    != '' ) ? 'id="' . esc_attr( $id ) . '"' : '';
@@ -19,6 +20,7 @@ function CornerstoneLibraryScrollingElement_Shortcode( $atts, $content = null ) 
   $style  = ( $style != '' ) ? 'style="' . $style . '"' : '';
   $numitems = ( $numitems != '' ) ? $numitems : 3;
   $duration = ( $duration != '' ) ? $duration : 700;
+  $height   = ( $height != '' ) ? $height : 'auto';
   $randnum = rand(0,1000);
 
 
@@ -28,20 +30,16 @@ function CornerstoneLibraryScrollingElement_Shortcode( $atts, $content = null ) 
           . "<script type=\"text/javascript\">"
             . "jQuery(document).ready(function($) {
                 $('#caroufredsel-{$randnum}').carouFredSel({
-                  items     : {$numitems},
-                  direction : 'left',
-                  responsive: true,
-                  height: 'auto',
-                  scroll    : {
-                    items        : 1,
-                    easing       : 'swing',
-                    duration     : {$duration},
-                    pauseOnHover : false
+                  items      : { 
+                    visible: { min: 1, max: {$numitems} } 
                   },
-                  /*swipe : {
-                    onTouch : true,
-                    onMouse : true
-                  }*/
+                  scroll : {
+                    items         : 1,
+                    easing        : 'easeInOutQuint',
+                    duration      : {$duration},
+                    pauseOnHover  : false
+                  },
+                  responsive : true
                 });
               });"
           . "</script>";
@@ -75,7 +73,7 @@ function CornerstoneLibraryScrollingElement_Item_Shortcode( $atts, $content = nu
 
   $id    = ( $id    != '' ) ? 'id="' . esc_attr( $id ) . '"' : '';
   $class = ( $class != '' ) ? 'class="' . esc_attr( $class ) . '"' : '';
-  $style = ( $style != '' ) ? 'style="float:left; ' . $flex . $style . '"' : 'style="float:left; ' . $flex . '"';
+  $style = ( $style != '' ) ? 'style="float:left;display:block; ' . $flex . $style . '"' : 'style="float:left;display:block; ' . $flex . '"';
 
 
   $output = "<div {$id} {$class} {$style}>" . do_shortcode( $content ) . "</div>";
