@@ -4,7 +4,7 @@ class BW_Cornerstone_Carousel_Item extends Cornerstone_Element_Base {
 
   public function data() {
     return array(
-      'name'        => 'csl-horizontal-scroll-item',
+      'name'        => 'cornerstone-carousel-item',
       'title'       => __( 'Scroll Item', csl18n() ),
       'section'     => '_content',
       'description' => __( 'Scroll Item description.', csl18n() ),
@@ -33,22 +33,6 @@ class BW_Cornerstone_Carousel_Item extends Cornerstone_Element_Base {
     );
 
   }
-
-  // public function render( $atts ) {
-
-  //   extract( $atts );
-
-  //   $extra = $this->extra( array(
-  //     'id'    => $id,
-  //     'class' => $class,
-  //     'style' => $style
-  //   ) );
-
-  //   $shortcode = "[fashioneye-horizontal-scroll-item{$extra}][/fashioneye-horizontal-scroll-item]";
-
-  //   return $shortcode;
-
-  // }
 
 }
 cornerstone_add_element( 'BW_Cornerstone_Carousel_Item' );

@@ -4,12 +4,12 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
 
   public function data() {
     return array(
-      'name'        => 'csl-horizontal-scroll',
+      'name'        => 'cornerstone-carousel',
       'title'       => __( 'Scrolling Carousel', csl18n() ),
       'section'     => 'content',
       'description' => __( 'Scrolls content horizontally.', csl18n() ),
       'supports'    => array( 'id', 'class', 'style' ),
-      'childType'   => 'csl-horizontal-scroll-item',
+      'childType'   => 'cornerstone-carousel-item',
       'renderChild' => true
     );
   }
@@ -73,11 +73,11 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
         'style' => $e['style']
       ) );
 
-      $contents .= '[csl-horizontal-scroll-item'  .  ' auto_valign=' . $auto_valign . $item_extra . ']' . $e['content'] . '[/csl-horizontal-scroll-item]';
+      $contents .= '[cornerstone-carousel-item'  .  ' auto_valign=' . $auto_valign . $item_extra . ']' . $e['content'] . '[/cornerstone-carousel-item]';
 
     }
 
-    $shortcode = "[csl-horizontal-scroll numitems=\"{$numitems}\" duration=\"{$duration}\" {$extra}]{$contents}[/csl-horizontal-scroll]";
+    $shortcode = "[cornerstone-carousel numitems=\"{$numitems}\" duration=\"{$duration}\" {$extra}]{$contents}[/cornerstone-carousel]";
 
     return $shortcode;
 

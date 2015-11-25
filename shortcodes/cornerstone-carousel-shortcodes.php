@@ -13,7 +13,7 @@ function CornerstoneLibraryScrollingElement_Shortcode( $atts, $content = null ) 
     'numitems' => '',
     'duration' => '',
     'height'   => ''
-  ), $atts, 'csl-horizontal-scroll' ) );
+  ), $atts, 'cornerstone-carousel' ) );
 
   $id     = ( $id    != '' ) ? 'id="' . esc_attr( $id ) . '"' : '';
   $class  = ( $class != '' ) ? 'class="csl-horiz-scroll ' . esc_attr( $class ) . '"' : 'class="csl-horiz-scroll"';
@@ -47,7 +47,7 @@ function CornerstoneLibraryScrollingElement_Shortcode( $atts, $content = null ) 
 
   return $output;
 }
-add_shortcode( 'csl-horizontal-scroll', 'CornerstoneLibraryScrollingElement_Shortcode' );
+add_shortcode( 'cornerstone-carousel', 'CornerstoneLibraryScrollingElement_Shortcode' );
 
 
 
@@ -63,7 +63,7 @@ function CornerstoneLibraryScrollingElement_Item_Shortcode( $atts, $content = nu
     'class' => '',
     'style' => '',
     'auto_valign' => 1
-  ), $atts, 'csl-horizontal-scroll-item' ) );
+  ), $atts, 'cornerstone-carousel-item' ) );
 
   if ( $auto_valign === 'true' ) {
     $flex = "display:flex; align-items:center; justify-content:center; height:100%;";
@@ -80,5 +80,5 @@ function CornerstoneLibraryScrollingElement_Item_Shortcode( $atts, $content = nu
 
   return $output;
 }
-add_shortcode( 'csl-horizontal-scroll-item', 'CornerstoneLibraryScrollingElement_Item_Shortcode' );
+add_shortcode( 'cornerstone-carousel-item', 'CornerstoneLibraryScrollingElement_Item_Shortcode' );
 
