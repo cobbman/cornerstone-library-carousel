@@ -1,6 +1,6 @@
 <?php
 
-class CSL_Horizontal_Scroll_Item extends Cornerstone_Element_Base {
+class BW_Cornerstone_Carousel_Item extends Cornerstone_Element_Base {
 
   public function data() {
     return array(
@@ -51,4 +51,4 @@ class CSL_Horizontal_Scroll_Item extends Cornerstone_Element_Base {
   // }
 
 }
-cornerstone_add_element( 'CSL_Horizontal_Scroll_Item' );
+cornerstone_add_element( 'BW_Cornerstone_Carousel_Item' );
