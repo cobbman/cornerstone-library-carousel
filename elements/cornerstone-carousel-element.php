@@ -32,7 +32,7 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
     );
 
     $this->addControl(
-      'numitems',
+      'maxitems',
       'number',
       __( 'Number of items to show at once', csl18n() ),
       __( 'Number of items to show at once', csl18n() ),
@@ -77,7 +77,7 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
 
     }
 
-    $shortcode = "[cornerstone-carousel numitems=\"{$numitems}\" duration=\"{$duration}\" {$extra}]{$contents}[/cornerstone-carousel]";
+    $shortcode = "[cornerstone-carousel maxitems=\"{$maxitems}\" duration=\"{$duration}\" {$extra}]{$contents}[/cornerstone-carousel]";
 
     return $shortcode;
 
