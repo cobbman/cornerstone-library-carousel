@@ -5,7 +5,7 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
   public function data() {
     return array(
       'name'        => 'cornerstone-carousel',
-      'title'       => __( 'Scrolling Carousel', csl18n() ),
+      'title'       => __( 'Carousel', csl18n() ),
       'section'     => 'content',
       'description' => __( 'Scrolls content horizontally.', csl18n() ),
       'supports'    => array( 'id', 'class', 'style' ),
@@ -16,27 +16,14 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
 
   public function controls() {
 
-    $this->addControl(
-      'elements',
-      'sortable',
-      __( 'Scroll Items', csl18n() ),
-      __( 'Add a new item.', csl18n() ),
-      array(
-        array( 'title' => __( 'Scroll item 1', csl18n() ) ),
-        array( 'title' => __( 'Scroll item 2', csl18n() ) )
-      ),
-      array(
-        'newTitle' => __( 'Scroll item %s', csl18n() ),
-        'floor'    => 2
-      )
-    );
+    // Extra controls
 
     $this->addControl(
       'maxitems',
       'number',
       __( 'Number of items to show at once', csl18n() ),
       __( 'Number of items to show at once', csl18n() ),
-      3,
+      4,
       ''
     );
 
@@ -44,7 +31,7 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
       'duration',
       'number',
       __( 'Milliseconds between scroll movements', csl18n() ),
-      __( '1 second = 1000 milliseconds', csl18n() ),
+      __( '1000 milliseconds = 1 second', csl18n() ),
       700,
       ''
     );
@@ -54,9 +41,58 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
       'toggle',
       __( 'Automatically Vertical Center Items?', csl18n() ),
       __( 'Uses CSS Flex attribute to vertically position items in the middle', csl18n() ),
-      true
+      false
     );
 
+    $this->addControl(
+      'pause_hover',
+      'toggle',
+      __( 'Pause on Hover?', csl18n() ),
+      __( 'Will pause the animation when the user hovers their mouse over it.', csl18n() ),
+      false
+    );
+
+    $this->addControl(
+      'navigation',
+      'toggle',
+      __( 'Navigation?', csl18n() ),
+      __( 'Show previous and next controls', csl18n() ),
+      false
+    );
+
+    $this->addControl(
+      'pagination_type',
+      'select',
+      __( 'Pagination Style', csl18n() ),
+      __( 'Select the pagination style.', csl18n() ),
+      'none',
+      array(
+        'choices' => array(
+          array( 'value' => 'none',    'label' => __( 'None', csl18n() ) ),
+          array( 'value' => 'dots',    'label' => __( 'Dots', csl18n() ) ),
+          array( 'value' => 'numbers', 'label' => __( 'Numbers', csl18n() ) )
+        )
+      )
+    );
+
+    // Elements Items
+
+    $this->addControl(
+      'elements',
+      'sortable',
+      __( 'Carousel Items', csl18n() ),
+      __( 'Add a new item.', csl18n() ),
+      array(
+        array( 'title' => __( 'Scroll item 1', csl18n() ) ),
+        array( 'title' => __( 'Scroll item 2', csl18n() ) ),
+        array( 'title' => __( 'Scroll item 3', csl18n() ) ),
+        array( 'title' => __( 'Scroll item 4', csl18n() ) )
+      ),
+      array(
+        'newTitle' => __( 'Scroll item %s', csl18n() ),
+        'floor'    => 2
+      )
+    );
   }
 
   public function render( $atts ) {
@@ -77,7 +113,7 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
 
     }
 
-    $shortcode = "[cornerstone-carousel maxitems=\"{$maxitems}\" duration=\"{$duration}\" {$extra}]{$contents}[/cornerstone-carousel]";
+    $shortcode = "[cornerstone-carousel maxitems=\"{$maxitems}\" duration=\"{$duration}\" auto_valign=\"{$auto_valign}\" pause_hover=\"{$pause_hover}\" navigation=\"{$navigation}\" pagination_type=\"{$pagination_type}\" {$extra}]{$contents}[/cornerstone-carousel]";
 
     return $shortcode;
 
