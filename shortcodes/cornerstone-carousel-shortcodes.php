@@ -11,7 +11,6 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
     'class'            => '',
     'style'            => '',
     'maxitems'         => '',
-    'duration'         => '',
     'pauseonhover'     => '',
     'navigation'       => '',
     'auto_valign'      => '',
@@ -24,10 +23,10 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
   $class        = ( $class    != '' ) ? 'class="cornerstone-carousel-wrap ' . esc_attr( $class ) . '"' : 'class="cornerstone-carousel-wrap"';
   $style        = ( $style    != '' ) ? 'style="' . $style . '"' : '';
   $maxitems     = ( $maxitems != '' ) ? $maxitems : 3;
-  $duration     = ( $duration != '' ) ? $duration : 700;
   $pauseonhover = ( $pauseonhover == 'true' ) ? 'true' : 'false';
   $navigation   = ( $navigation   == 'true' ) ? 'true' : 'false';
-  $auto_valign  = ( $auto_valign  == 'true' ) ? 'true' : 'false';
+  // $auto_valign  = ( $auto_valign  == 1 ) ? 'true' : 'false';
+
 
   if ( $pagination_type == 'dots' ) {
     $dots = 'true';
@@ -46,14 +45,14 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
   // the element
 
   $output = "<div {$id} {$class} {$style}>"
-              . "<div class='owl-carousel-" . $randnum . "'>" . do_shortcode( $content ) . "</div>"
+              . "<div class='owl-" . $randnum . "'>" . do_shortcode( $content ) . "</div>"
           . "</div>";
 
   // vertical align ?
 
   if ( $auto_valign ) {
     $output .= "<style>" .
-                ".owl-carousel-" . $randnum . " .owl-item { " .
+                ".owl-" . $randnum . " .owl-item { " .
                   "display:flex; 
                   align-items:center; 
                   justify-content:center;" .
@@ -65,19 +64,17 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
 
   $output .= "<script type=\"text/javascript\">/* <![CDATA[ */" .
                "jQuery(document).ready(function($){" .
-                 "$('.owl-carousel-" . $randnum . "').owlCarousel({
-                    items : {$maxitems},
-                    slideSpeed : {$duration},
-                    autoPlay : true,
-                    navigation : {$navigation},
+                 "$('.owl-" . $randnum . "').owlCarousel({
+                    autoPlay: true,
+                    items: {$maxitems},
+                    navigation: {$navigation},
                     pagination: {$dots},
                     paginationNumbers: {$nums},
-                    rewindSpeed: 300,
                     stopOnHover: {$pauseonhover}
                   });\n";
 
   if ( $auto_valign ) {
-    $output .=    "var currentOwl = '.owl-carousel-" . $randnum . "';" .
+    $output .=    "var currentOwl = '.owl-" . $randnum . "';" .
       "var owlHeight = $(currentOwl + ' .owl-wrapper').height();" .
        "$(currentOwl + ' .owl-item').css('height', owlHeight + 'px' );";
   }
@@ -108,7 +105,7 @@ function CornerstoneCarouselElement_Item_Shortcode( $atts, $content = null ) {
   ), $atts, 'cornerstone-carousel-item' ) );
 
   if ( $auto_valign === 'true' ) {
-    $flex = "display:flex; align-items:center; justify-content:center; height:100%; ";
+    $flex = "display:flex; align-items:center; justify-content:center; ";
   } else {
     $flex = '';
   }

@@ -21,18 +21,9 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
     $this->addControl(
       'maxitems',
       'number',
-      __( 'Number of items to show at once', csl18n() ),
+      __( 'Number of items to show at one time', csl18n() ),
       __( 'Number of items to show at once', csl18n() ),
       4,
-      ''
-    );
-
-    $this->addControl(
-      'duration',
-      'number',
-      __( 'Milliseconds between scroll movements', csl18n() ),
-      __( '1000 milliseconds = 1 second', csl18n() ),
-      700,
       ''
     );
 
@@ -113,7 +104,7 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
 
     }
 
-    $shortcode = "[cornerstone-carousel maxitems=\"{$maxitems}\" duration=\"{$duration}\" auto_valign=\"{$auto_valign}\" pause_hover=\"{$pause_hover}\" navigation=\"{$navigation}\" pagination_type=\"{$pagination_type}\" {$extra}]{$contents}[/cornerstone-carousel]";
+    $shortcode = "[cornerstone-carousel maxitems=\"{$maxitems}\" auto_valign=\"{$auto_valign}\" pause_hover=\"{$pause_hover}\" navigation=\"{$navigation}\" pagination_type=\"{$pagination_type}\" {$extra}]{$contents}[/cornerstone-carousel]";
 
     return $shortcode;
 
