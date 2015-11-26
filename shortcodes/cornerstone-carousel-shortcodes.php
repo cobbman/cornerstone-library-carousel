@@ -73,6 +73,7 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
                     stopOnHover: {$pauseonhover}
                   });\n";
 
+  // TODO: Fix how this is parsing
   if ( $auto_valign ) {
     $output .=    "var currentOwl = '.owl-" . $randnum . "';" .
       "var owlHeight = $(currentOwl + ' .owl-wrapper').height();" .
