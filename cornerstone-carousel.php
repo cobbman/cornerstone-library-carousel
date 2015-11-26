@@ -3,7 +3,7 @@
 Plugin Name: Cornerstone: Carousel
 Plugin URI:  http://bigwilliam.com/
 Description: Adds a horizontal scrolling element to the Cornerstone Page builder. Download plugin at <a href="http://cornerstonelibrary.com" target="_blank">Cornerstone Library</a>.
-Version:     0.5
+Version:     1.0
 Author:      BigWilliam
 Author URI:  http://bigwilliam.com
 Author Email: hello@bigwilliam.com
