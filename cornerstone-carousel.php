@@ -24,9 +24,9 @@ if ( ! defined( 'WPINC' ) ) die;
 function cornerstone_carousel_scripts() {
 
 	// OWL CAROUSEL
-	wp_enqueue_script( 'owl-carousel', plugins_url('/assets/js/owl-carousel/owl.carousel.min.js', __FILE__ ), array('jquery'), null, true );
-	wp_enqueue_style('owl-main-css', plugins_url('/assets/js/owl/owl-carousel/owl.carousel.css', __FILE__ ), array(), '1.0' );
-	wp_enqueue_style('owl-theme-css', plugins_url('/assets/js/owl/owl-carousel/owl.theme.css', __FILE__ ), array(), '1.0' );
+	wp_enqueue_script( 'owl-carousel-js', plugins_url('/assets/js/owl-carousel/owl.carousel.min.js', __FILE__ ), array('jquery'), null, true );
+	wp_enqueue_style('owl-main-css', plugins_url('/assets/js/owl-carousel/owl.carousel.css', __FILE__ ), array(), '1.0' );
+	wp_enqueue_style('owl-theme-css', plugins_url('/assets/js/owl-carousel/owl.theme.css', __FILE__ ), array(), '1.0' );
 
 	// CUSTOM
 	// wp_enqueue_script( 'cornerstone-carousel-js', plugins_url('/assets/js/cornerstone-carousel.js', __FILE__ ), array('jquery'), null, true );

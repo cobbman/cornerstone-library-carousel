@@ -11,7 +11,7 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
     'class'            => '',
     'style'            => '',
     'maxitems'         => '',
-    'pauseonhover'     => '',
+    'pause_hover'      => '',
     'navigation'       => '',
     'auto_valign'      => '',
     'pagination_type'  => ''
@@ -23,7 +23,7 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
   $class        = ( $class    != '' ) ? 'class="cornerstone-carousel-wrap ' . esc_attr( $class ) . '"' : 'class="cornerstone-carousel-wrap"';
   $style        = ( $style    != '' ) ? 'style="' . $style . '"' : '';
   $maxitems     = ( $maxitems != '' ) ? $maxitems : 3;
-  $pauseonhover = ( $pauseonhover == 'true' ) ? 'true' : 'false';
+  $pause_hover = ( $pause_hover == 'true' ) ? 'true' : 'false';
   $navigation   = ( $navigation   == 'true' ) ? 'true' : 'false';
   // $auto_valign  = ( $auto_valign  == 1 ) ? 'true' : 'false';
 
@@ -70,7 +70,7 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
                     navigation: {$navigation},
                     pagination: {$dots},
                     paginationNumbers: {$nums},
-                    stopOnHover: {$pauseonhover}
+                    stopOnHover: {$pause_hover}
                   });\n";
 
   // TODO: Fix how this is parsing

@@ -54,7 +54,7 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
     $this->addControl(
       'pagination_type',
       'select',
-      __( 'Pagination Style', csl18n() ),
+      __( 'Pagination?', csl18n() ),
       __( 'Select the pagination style.', csl18n() ),
       'none',
       array(
