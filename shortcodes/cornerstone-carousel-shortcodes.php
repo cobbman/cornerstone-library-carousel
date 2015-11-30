@@ -22,8 +22,8 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
   $class        = ( $class    != '' ) ? 'class="cornerstone-carousel-wrap ' . esc_attr( $class ) . '"' : 'class="cornerstone-carousel-wrap"';
   $style        = ( $style    != '' ) ? 'style="' . $style . '"' : '';
   $maxitems     = ( $maxitems != '' ) ? $maxitems : 3;
-  $pause_hover = ( $pause_hover == 'true' ) ? 'true' : 'false';
-  // $auto_valign  = ( $auto_valign  == 1 ) ? 'true' : 'false';
+  $pause_hover  = ( $pause_hover == 'true' ) ? 'true' : 'false';
+  $auto_valign  = ( $auto_valign  == 'true' ) ? true : false;
 
 
   // Navigation & Pagination
@@ -67,7 +67,7 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
   }
 
 
-  $randnum = rand(0,5000); // doing this for now to namespace separate elements on the same page. TODO: use a session var, transient or something else.
+  $randnum = rand(0,5000); // doing this for now to namespace multiple elements on the same page. TODO: use a session var, transient or something else.
 
 
   // the element
@@ -90,7 +90,7 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
 
   // JS to make it happen
 
-  $output .= "<script type=\"text/javascript\">/* <![CDATA[ */" .
+  $output .= "<script type=\"text/javascript\">" .
                "jQuery(document).ready(function($){" .
                  "$('.owl-" . $randnum . "').owlCarousel({
                     autoPlay: true,
@@ -101,7 +101,6 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
                     stopOnHover: {$pause_hover}
                   });\n";
 
-  // TODO: Fix how this is parsing
   if ( $auto_valign ) {
     $output .=    "var currentOwl = '.owl-" . $randnum . "';" .
       "var owlHeight = $(currentOwl + ' .owl-wrapper').height();" .
@@ -109,9 +108,10 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
   }
 
   $output .= "});" .
-             "/* ]]> */</script>";
+             "</script>";
 
 
+  // All done
 
   return $output;
 }
@@ -129,20 +129,13 @@ function CornerstoneCarouselElement_Item_Shortcode( $atts, $content = null ) {
 	extract( shortcode_atts( array(
     'id'    => '',
     'class' => '',
-    'style' => '',
-    'auto_valign' => 1
+    'style' => ''
   ), $atts, 'cornerstone-carousel-item' ) );
 
-  if ( $auto_valign === 'true' ) {
-    $flex = "display:flex; align-items:center; justify-content:center; ";
-  } else {
-    $flex = '';
-  }
 
   $id    = ( $id    != '' ) ? 'id="' . esc_attr( $id ) . '"' : '';
   $class = ( $class != '' ) ? 'class="' . esc_attr( $class ) . '"' : '';
-  $style = ( $style != '' ) ? 'style="' . $flex . $style . '"' : 'style="' . $flex . '"';
-
+  $style = ( $style != '' ) ? 'style="' . $style . '"' : '';
 
   $output = "<div {$id} {$class} {$style}>" . do_shortcode( $content ) . "</div>";
 

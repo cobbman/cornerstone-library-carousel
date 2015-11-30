@@ -30,7 +30,7 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
     $this->addControl(
       'auto_valign',
       'toggle',
-      __( 'Automatically Vertical Center Items?', csl18n() ),
+      __( 'Automatically Center Items?', csl18n() ),
       __( 'Uses CSS Flex attribute to vertically position items in the middle', csl18n() ),
       false
     );
@@ -103,11 +103,11 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
         'style' => $e['style']
       ) );
 
-      $contents .= '[cornerstone-carousel-item'  .  ' auto_valign=' . $auto_valign . $item_extra . ']' . $e['content'] . '[/cornerstone-carousel-item]';
+      $contents .= '[cornerstone-carousel-item ' . $item_extra . ']' . $e['content'] . '[/cornerstone-carousel-item]';
 
     }
 
-    $shortcode = "[cornerstone-carousel maxitems=\"{$maxitems}\" auto_valign=\"{$auto_valign}\" pause_hover=\"{$pause_hover}\" pagination_type=\"{$pagination_type}\" {$extra}]{$contents}[/cornerstone-carousel]";
+    $shortcode = "[cornerstone-carousel maxitems=\"{$maxitems}\" auto_valign={$auto_valign} pause_hover=\"{$pause_hover}\" pagination_type=\"{$pagination_type}\" {$extra}]{$contents}[/cornerstone-carousel]";
 
     return $shortcode;
 
