@@ -43,25 +43,28 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
       false
     );
 
-    $this->addControl(
-      'navigation',
-      'toggle',
-      __( 'Navigation?', csl18n() ),
-      __( 'Show previous and next controls', csl18n() ),
-      false
-    );
+    // $this->addControl(
+    //   'navigation',
+    //   'toggle',
+    //   __( 'Navigation?', csl18n() ),
+    //   __( 'Show previous and next controls', csl18n() ),
+    //   false
+    // );
 
     $this->addControl(
       'pagination_type',
       'select',
-      __( 'Pagination?', csl18n() ),
+      __( 'Navigation & Pagination', csl18n() ),
       __( 'Select the pagination style.', csl18n() ),
       'none',
       array(
         'choices' => array(
           array( 'value' => 'none',    'label' => __( 'None', csl18n() ) ),
-          array( 'value' => 'dots',    'label' => __( 'Dots', csl18n() ) ),
-          array( 'value' => 'numbers', 'label' => __( 'Numbers', csl18n() ) )
+          array( 'value' => 'dots',    'label' => __( 'Dots Only', csl18n() ) ),
+          array( 'value' => 'dots_nav', 'label' => __( 'Dots and Prev/Next', csl18n() ) ),
+          array( 'value' => 'numbers', 'label' => __( 'Numbers Only', csl18n() ) ),
+          array( 'value' => 'numbers_nav', 'label' => __( 'Numbers and Prev/Next', csl18n() ) ),
+          array( 'value' => 'prev_next', 'label' => __( 'Prev/Next Only', csl18n() ) )
         )
       )
     );
@@ -104,7 +107,7 @@ class BW_Cornerstone_Carousel extends Cornerstone_Element_Base {
 
     }
 
-    $shortcode = "[cornerstone-carousel maxitems=\"{$maxitems}\" auto_valign=\"{$auto_valign}\" pause_hover=\"{$pause_hover}\" navigation=\"{$navigation}\" pagination_type=\"{$pagination_type}\" {$extra}]{$contents}[/cornerstone-carousel]";
+    $shortcode = "[cornerstone-carousel maxitems=\"{$maxitems}\" auto_valign=\"{$auto_valign}\" pause_hover=\"{$pause_hover}\" pagination_type=\"{$pagination_type}\" {$extra}]{$contents}[/cornerstone-carousel]";
 
     return $shortcode;
 

@@ -12,7 +12,6 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
     'style'            => '',
     'maxitems'         => '',
     'pause_hover'      => '',
-    'navigation'       => '',
     'auto_valign'      => '',
     'pagination_type'  => ''
   ), $atts, 'cornerstone-carousel' ) );
@@ -24,20 +23,49 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
   $style        = ( $style    != '' ) ? 'style="' . $style . '"' : '';
   $maxitems     = ( $maxitems != '' ) ? $maxitems : 3;
   $pause_hover = ( $pause_hover == 'true' ) ? 'true' : 'false';
-  $navigation   = ( $navigation   == 'true' ) ? 'true' : 'false';
   // $auto_valign  = ( $auto_valign  == 1 ) ? 'true' : 'false';
 
 
-  if ( $pagination_type == 'dots' ) {
-    $dots = 'true';
-    $nums = 'false';
-  } elseif ( $pagination_type == 'numbers' ) {
-    $dots = 'true';
-    $nums = 'true';
-  } else {
-    $dots = 'false';
-    $nums = 'false';
+  // Navigation & Pagination
+
+  switch ( $pagination_type ) {
+    case 'dots':
+      $dots = 'true';
+      $nums = 'false';
+      $nav  = 'false';
+      break;
+
+    case 'dots_nav':
+      $dots = 'true';
+      $nums = 'false';
+      $nav  = 'true';
+      break;
+
+    case 'numbers':
+      $dots = 'true';
+      $nums = 'true';
+      $nav  = 'false';
+      break;
+
+    case 'numbers_nav':
+      $dots = 'true';
+      $nums = 'true';
+      $nav  = 'true';
+      break;
+
+    case 'prev_next':
+      $dots = 'false';
+      $nums = 'false';
+      $nav  = 'true';
+      break;
+
+    default: // NONE
+      $nav  = 'false';
+      $dots = 'false';
+      $nums = 'false';
+      break;
   }
+
 
   $randnum = rand(0,5000); // doing this for now to namespace separate elements on the same page. TODO: use a session var, transient or something else.
 
@@ -67,7 +95,7 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
                  "$('.owl-" . $randnum . "').owlCarousel({
                     autoPlay: true,
                     items: {$maxitems},
-                    navigation: {$navigation},
+                    navigation: {$nav},
                     pagination: {$dots},
                     paginationNumbers: {$nums},
                     stopOnHover: {$pause_hover}
