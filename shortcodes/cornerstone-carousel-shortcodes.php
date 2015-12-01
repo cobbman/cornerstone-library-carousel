@@ -76,17 +76,6 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
               . "<div class='owl-" . $randnum . "'>" . do_shortcode( $content ) . "</div>"
           . "</div>";
 
-  // vertical align ?
-
-  if ( $auto_valign ) {
-    $output .= "<style>" .
-                ".owl-" . $randnum . " .owl-item { " .
-                  "display:flex; 
-                  align-items:center; 
-                  justify-content:center;" .
-                "}" .
-                "</style>";
-  }
 
   // JS to make it happen
 
@@ -110,6 +99,17 @@ function CornerstoneCarouselElement_Shortcode( $atts, $content = null ) {
   $output .= "});" .
              "</script>";
 
+  // vertical align ?
+
+  if ( $auto_valign ) {
+    $output .= "<style>" .
+                ".owl-" . $randnum . " .owl-item { " .
+                  "display:flex; 
+                  align-items:center; 
+                  justify-content:center;" .
+                "}" .
+                "</style>";
+  }
 
   // All done
 
