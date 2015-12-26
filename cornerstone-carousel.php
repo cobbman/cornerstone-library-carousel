@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Cornerstone: Carousel
+Plugin Name: Cornerstone Library: Carousel
 Plugin URI:  http://bigwilliam.com/
 Description: Adds a horizontal scrolling carousel to the Cornerstone Page builder. Download plugin at <a href="http://cornerstonelibrary.com" target="_blank">Cornerstone Library</a>.
 Version:     1.2
