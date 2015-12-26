@@ -38,7 +38,7 @@ add_action( 'wp_enqueue_scripts', 'csl_carousel_scripts');
 function csl_carousel_elements() {
 	// require_once( 'elements/cornerstone-carousel-element.php' );
 	// require_once( 'elements/cornerstone-carousel-element-item.php' );
-	cornerstone_register_element( 'CSL_Carousel', 'csl-carousel', CSL_CAROUSEL_PATH . 'includes/my-element' );
-	cornerstone_register_element( 'CSL_Carousel', 'csl-carousel', CSL_CAROUSEL_PATH . 'includes/my-element' );
+	cornerstone_register_element( 'CSL_Carousel', 'csl-carousel', CSL_CAROUSEL_PATH . 'includes/csl-carousel' );
+	cornerstone_register_element( 'CSL_Carousel', 'csl-carousel', CSL_CAROUSEL_PATH . 'includes/csl-carousel-item' );
 }
 add_action( 'cornerstone_register_elements', 'csl_carousel_elements' );
