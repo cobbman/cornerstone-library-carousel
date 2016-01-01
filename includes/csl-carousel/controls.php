@@ -63,7 +63,7 @@ return array(
 	'elements' => array(
 		'type' => 'sortable',
 		'options' => array(
-			'element' => '',
+			'element' => 'csl-cornerstone-item',
 			'newTitle' => __('Carousel Item %s', '__x__'),
 			'floor' => 1,
 			'capacity' => 500,
