@@ -7,6 +7,7 @@
 return array(
 
 	// Max Items
+	
 	'maxitems' => array(
 		'type'    => 'number',
 		'ui' => array(
@@ -18,25 +19,27 @@ return array(
 	),
 
 	// Auto Vertial Align
+
 	'auto_valign' => array(
 		'type'    => 'toggle',
 		'ui' => array(
 			'title'   => __( 'Automatically Center Items?', '__x__' ),
 			'tooltip' => __( 'Will auto center vertically and horizontally', '__x__' ),
-		),
-		'context' => 'content', // KEEP THIS???
+		)
 	),
 
 	// Pause on Hover
+
 	'pause_hover' => array(
 		'type'    => 'toggle',
 		'ui' => array(
 			'title'   => __( 'Pause on Hover?', '__x__' ),
-			'tooltip' => __( 'Will pause the animation when the user hovers their mouse over it.', '__x__' ),
+			'tooltip' => __( 'Will pause the carousel when the user hovers their mouse over it.', '__x__' ),
 		),
 	),
 
 	// Pagination Type
+
 	'pagination_type' => array(
 		'type' => 'select',
 		'ui'   => array(
@@ -55,40 +58,22 @@ return array(
 		),
 	),
 
+	// Carousel Items
 
-
-	//  asdfadsfasd
-	'asdf' => array(
-		'type' => 'choose',
-		'ui' => array(
-			'title' => __( 'Orientation', '__x__' ),
-      'tooltip' => __( 'Choose to display the heading vertically or horizonatally', '__x__' ),
-		),
+	'elements' => array(
+		'type' => 'sortable',
 		'options' => array(
-      'columns' => '2',
-      'choices' => array(
-        array( 'value' => 'vertical',   'tooltip' => __( 'Vertical', '__x__' ),   'icon' => fa_entity( 'arrows-v' ) ),
-        array( 'value' => 'horizontal', 'tooltip' => __( 'Horizontal', '__x__' ), 'icon' => fa_entity( 'arrows-h' ) ),
-      )
-    )
-  ),
-
-	'heading_color' => array(
-	 	'type' => 'color',
-	 	'ui' => array(
-			'title'   => __( 'Heading Color', '__x__' )
+			'element' => '',
+			'newTitle' => __('Carousel Item %s', '__x__'),
+			'floor' => 1,
+			'capacity' => 500,
+			'title_field' => 'heading'
+		),
+		'context' => 'content',
+		'suggest' => array(
+			array( 'heading' => __('First Item', '__x__') ),
+			array( 'heading' => __('Second Item', '__x__') ),
 		)
-	),
-
-	'background_color' => array(
-	 	'type' => 'color',
-	 	'ui' => array(
-			'title'   => __( 'Background Color', '__x__' )
-		)
-	),
-
-	'border' => array(
-	 	'mixin' => 'border',
-	),
+	)
 
 );
