@@ -7,8 +7,8 @@
 return array(
 
 	// Max Items
-	
-	'maxitems' => array(
+
+	'max_visible_items' => array(
 		'type'    => 'number',
 		'ui' => array(
 			'title'   => __( 'Max number of items', '__x__' ),
