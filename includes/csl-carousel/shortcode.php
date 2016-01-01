@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Shortcode: Cornerstoen Carousel
+ * Shortcode: Cornerstone Carousel
  */
 
 ?>
