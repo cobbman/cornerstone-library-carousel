@@ -56,19 +56,21 @@
   $id          = $carousel_id . " " . $id;
 
 ?>
+
 <!-- Carousel Element -->
+
 <div <?php cs_atts( array( 'id' => $id, 'class' => $class, 'style' => $style ) ); ?>>
 	<?php echo do_shortcode( $content ); ?>
 </div>
 
-<script type=\"text/javascript\">
-  jQuery(document).ready(function($) {
+<?php $carousel_id = "#" . $carousel_id; ?>
 
-  	$carousel_id = "#" . $carousel_id;
+<script type="text/javascript">
+
 
   	// Trigger Carousel Script
 
-    $(<?= $carousel_id ?>).owlCarousel({
+    $("<?= $carousel_id ?>").owlCarousel({
       autoPlay: true,
       items: <?= $max_visible_items ?>,
       navigation: <?= $nav ?>,
@@ -76,8 +78,6 @@
       paginationNumbers: <?= $nums ?>,
       stopOnHover: <?= $pause_hover ?>
     });
-
-    // Vertical Align
 
 		<?php if ( $auto_valign ) : ?>
 		  var currentOwl = "<?= $carousel_id ?>",
@@ -90,5 +90,5 @@
 		  });
 		<?php endif; ?>
 
-	});
+
 </script>

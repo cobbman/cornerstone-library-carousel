@@ -4,11 +4,11 @@
  * Element Definition: Cornerstone Carousel ITEM
  */
 
-class CSL_Cornerstone_Item {
+class CSL_Carousel_Item {
 
 	public function ui() {
 		return array(
-			'title' => __( 'Cornerstone Carousel Item', '__x__' )
+			'title' => __( 'Carousel Item', '__x__' )
 		);
 	}
 

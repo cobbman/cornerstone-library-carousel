@@ -8,9 +8,8 @@ return array(
 
 	// Title
 
-	'title' => array(
+	'heading' => array(
 		'type' => 'title',
-		'context' => 'content',
 		'suggest' => __( 'Carousel Item', '__x__' ),
 	),
 
@@ -21,4 +20,4 @@ return array(
 		'context' => 'content',
 		'suggest' => __( 'Add an image, shortcode, or text here! Button links also work!', '__x__' ),
 	)
-)
+);

@@ -12,10 +12,9 @@ return array(
 		'type'    => 'number',
 		'ui' => array(
 			'title'   => __( 'Max number of items', '__x__' ),
-			'tooltip' => __( 'Carousel will automatically show less for smaller screens. Limit the max amount here.', '__x__' ),
+			'tooltip' => __( 'Carousel will automatically show less items to fit smaller screens. Limit the max amount here.', '__x__' ),
 		),
-		'context' => 'content',
-    'suggest' => __( '4', '__x__' ),
+    'suggest' => __( '3', '__x__' ),
 	),
 
 	// Auto Vertial Align
@@ -35,7 +34,7 @@ return array(
 		'ui' => array(
 			'title'   => __( 'Pause on Hover?', '__x__' ),
 			'tooltip' => __( 'Will pause the carousel when the user hovers their mouse over it.', '__x__' ),
-		),
+		)
 	),
 
 	// Pagination Type
@@ -63,7 +62,7 @@ return array(
 	'elements' => array(
 		'type' => 'sortable',
 		'options' => array(
-			'element' => 'csl-cornerstone-item',
+			'element' => 'csl-carousel-item',
 			'newTitle' => __('Carousel Item %s', '__x__'),
 			'floor' => 1,
 			'capacity' => 500,
@@ -73,6 +72,7 @@ return array(
 		'suggest' => array(
 			array( 'heading' => __('First Item', '__x__') ),
 			array( 'heading' => __('Second Item', '__x__') ),
+			array( 'heading' => __('Third Item', '__x__') ),
 		)
 	)
 
