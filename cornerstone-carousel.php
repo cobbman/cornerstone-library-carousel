@@ -24,12 +24,11 @@ add_action( 'cornerstone_register_elements', 'csl_carousel_register_elements' );
 add_filter( 'cornerstone_icon_map', 'cornerstone_library_icon_map');
 
 /*
- * => ENQUEUE SCRIPTS
+ * => ENQUEUE STYLES (SCRIPTS ARE IN THE SHORTCODE)
  * ---------------------------------------------------------------------------*/
 function csl_carousel_scripts() {
 
 	// OWL CAROUSEL
-	wp_enqueue_script( 'owl-carousel-js', CSL_CAROUSEL_URL . '/assets/js/owl-carousel/owl.carousel.min.js', array('jquery'), null, true );
 	wp_enqueue_style( 'owl-main-css',  CSL_CAROUSEL_URL . '/assets/js/owl-carousel/owl.carousel.css', array(), '1.2' );
 	wp_enqueue_style( 'owl-theme-css', CSL_CAROUSEL_URL . '/assets/js/owl-carousel/owl.theme.css', array(), '1.2' );
 }
