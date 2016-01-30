@@ -7,5 +7,5 @@
 return array(
 	'id'               => '',
 	'class'            => '',
-	'style'            => '',
+	'style'            => ''
 );

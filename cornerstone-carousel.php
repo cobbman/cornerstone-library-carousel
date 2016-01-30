@@ -13,35 +13,38 @@ Text Domain: __x__
 
 
 // Prevent direct access
-if ( ! defined( 'WPINC' ) ) die;
+// if ( ! defined( 'WPINC' ) ) die;
 
 define( 'CSL_CAROUSEL_PATH', plugin_dir_path( __FILE__ ) );
 define( 'CSL_CAROUSEL_URL', plugin_dir_url( __FILE__ ) );
 
 
-// add_action( 'wp_enqueue_scripts', 'csl_carousel_styles');
+/* Add element to Cornerstone */
 add_action( 'cornerstone_register_elements', 'csl_carousel_register_elements' );
+
+/* Add Icon Map */
 add_filter( 'cornerstone_icon_map', 'cornerstone_library_icon_map');
 
+/* wp_enqueue_scripts is declared in includes/csl-carousel/shortcode.php */
+
+
 /*
- * => ENQUEUE STYLES (SCRIPTS ARE IN THE SHORTCODE)
+ * => FUNCTIONS
  * ---------------------------------------------------------------------------*/
-function csl_carousel_styles() {
-	
+
+function csl_carousel_scripts() {
+  wp_enqueue_script( 'owl-js', CSL_CAROUSEL_URL . '/assets/js/owl-carousel/owl.carousel.min.js', array('jquery'), null, true );
+  wp_enqueue_script( 'csl-carousel-js', CSL_CAROUSEL_URL . '/assets/js/cornerstone-carousel.js', array('owl-js'), null, true );
+
+  wp_enqueue_style( 'owl-main-css',  CSL_CAROUSEL_URL . '/assets/js/owl-carousel/owl.carousel.css', array(), '1.2' );
+  wp_enqueue_style( 'owl-theme-css', CSL_CAROUSEL_URL . '/assets/js/owl-carousel/owl.theme.css', array(), '1.2' );
 }
 
-
-/*
- * => ADD TO CORNERSTONE
- * ---------------------------------------------------------------------------*/
 function csl_carousel_register_elements() {
 	cornerstone_register_element( 'CSL_Carousel', 'csl-carousel', CSL_CAROUSEL_PATH . 'includes/csl-carousel' );
 	cornerstone_register_element( 'CSL_Carousel_Item', 'csl-carousel-item', CSL_CAROUSEL_PATH . 'includes/csl-carousel-item' );
 }
 
-/*
- * => ICON MAP
- * ---------------------------------------------------------------------------*/
 function cornerstone_library_icon_map() {
 	$icon_map['csl-carousel'] = CSL_CAROUSEL_URL . '/assets/svg/icons.svg';
 	return $icon_map;
