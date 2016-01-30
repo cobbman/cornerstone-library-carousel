@@ -19,16 +19,14 @@ define( 'CSL_CAROUSEL_PATH', plugin_dir_path( __FILE__ ) );
 define( 'CSL_CAROUSEL_URL', plugin_dir_url( __FILE__ ) );
 
 
-add_action( 'wp_enqueue_scripts', 'csl_carousel_scripts');
+// add_action( 'wp_enqueue_scripts', 'csl_carousel_styles');
 add_action( 'cornerstone_register_elements', 'csl_carousel_register_elements' );
 add_filter( 'cornerstone_icon_map', 'cornerstone_library_icon_map');
 
 /*
  * => ENQUEUE STYLES (SCRIPTS ARE IN THE SHORTCODE)
  * ---------------------------------------------------------------------------*/
-function csl_carousel_scripts() {
-
-	// OWL CAROUSEL
+function csl_carousel_styles() {
 	wp_enqueue_style( 'owl-main-css',  CSL_CAROUSEL_URL . '/assets/js/owl-carousel/owl.carousel.css', array(), '1.2' );
 	wp_enqueue_style( 'owl-theme-css', CSL_CAROUSEL_URL . '/assets/js/owl-carousel/owl.theme.css', array(), '1.2' );
 }
