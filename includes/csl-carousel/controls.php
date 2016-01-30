@@ -11,10 +11,10 @@ return array(
 	'max_visible_items' => array(
 		'type'    => 'number',
 		'ui' => array(
-			'title'   => __( 'Max number of items', '__x__' ),
-			'tooltip' => __( 'Carousel will automatically show less items to fit smaller screens. Limit the max amount here.', '__x__' ),
+			'title'   => __( 'Max visible items', csl18n() ),
+			'tooltip' => __( 'Carousel will automatically show less items to fit smaller screens. Limit the max amount here.', csl18n() ),
 		),
-    'suggest' => __( '3', '__x__' ),
+    'suggest' => __( '3', csl18n() ),
 	),
 
 	// Auto Vertial Align
@@ -22,8 +22,8 @@ return array(
 	'auto_valign' => array(
 		'type'    => 'toggle',
 		'ui' => array(
-			'title'   => __( 'Automatically Center Items?', '__x__' ),
-			'tooltip' => __( 'Will auto center vertically and horizontally', '__x__' ),
+			'title'   => __( 'Automatically Center Items?', csl18n() ),
+			'tooltip' => __( 'Will auto center vertically and horizontally', csl18n() ),
 		)
 	),
 
@@ -32,8 +32,8 @@ return array(
 	'pause_hover' => array(
 		'type'    => 'toggle',
 		'ui' => array(
-			'title'   => __( 'Pause on Hover?', '__x__' ),
-			'tooltip' => __( 'Will pause the carousel when the user hovers their mouse over it.', '__x__' ),
+			'title'   => __( 'Pause on Hover?', csl18n() ),
+			'tooltip' => __( 'Will pause the carousel when the user hovers their mouse over it.', csl18n() ),
 		)
 	),
 
@@ -42,17 +42,17 @@ return array(
 	'pagination_type' => array(
 		'type' => 'select',
 		'ui'   => array(
-			'title' => __( 'Navigation & Pagination', '__x__' ),
-      'tooltip' => __( 'Select the pagination style.', '__x__' ),
+			'title' => __( 'Navigation & Pagination', csl18n() ),
+      'tooltip' => __( 'Select the pagination style.', csl18n() ),
 		),
 		'options' => array(
 			'choices' => array(
-        array( 'value' => 'none',    'label' => __( 'None', '__x__' ) ),
-        array( 'value' => 'dots',    'label' => __( 'Dots Only', '__x__' ) ),
-        array( 'value' => 'dots_nav', 'label' => __( 'Dots and Prev/Next', '__x__' ) ),
-        array( 'value' => 'numbers', 'label' => __( 'Numbers Only', '__x__' ) ),
-        array( 'value' => 'numbers_nav', 'label' => __( 'Numbers and Prev/Next', '__x__' ) ),
-        array( 'value' => 'prev_next', 'label' => __( 'Prev/Next Only', '__x__' ) )
+        array( 'value' => 'none',    'label' => __( 'None', csl18n() ) ),
+        array( 'value' => 'dots',    'label' => __( 'Dots Only', csl18n() ) ),
+        array( 'value' => 'dots_nav', 'label' => __( 'Dots and Prev/Next', csl18n() ) ),
+        array( 'value' => 'numbers', 'label' => __( 'Numbers Only', csl18n() ) ),
+        array( 'value' => 'numbers_nav', 'label' => __( 'Numbers and Prev/Next', csl18n() ) ),
+        array( 'value' => 'prev_next', 'label' => __( 'Prev/Next Only', csl18n() ) )
       ),
 		),
 	),
@@ -63,16 +63,16 @@ return array(
 		'type' => 'sortable',
 		'options' => array(
 			'element' => 'csl-carousel-item',
-			'newTitle' => __('Carousel Item %s', '__x__'),
+			'newTitle' => __('Carousel Item %s', csl18n()),
 			'floor' => 1,
-			'capacity' => 500,
+			'capacity' => 50,
 			'title_field' => 'heading'
 		),
 		'context' => 'content',
 		'suggest' => array(
-			array( 'heading' => __('First Item', '__x__') ),
-			array( 'heading' => __('Second Item', '__x__') ),
-			array( 'heading' => __('Third Item', '__x__') ),
+			array( 'heading' => __('First Item', csl18n()) ),
+			array( 'heading' => __('Second Item', csl18n()) ),
+			array( 'heading' => __('Third Item', csl18n()) ),
 		)
 	)
 

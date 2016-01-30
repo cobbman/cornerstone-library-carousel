@@ -27,8 +27,7 @@ add_filter( 'cornerstone_icon_map', 'cornerstone_library_icon_map');
  * => ENQUEUE STYLES (SCRIPTS ARE IN THE SHORTCODE)
  * ---------------------------------------------------------------------------*/
 function csl_carousel_styles() {
-	wp_enqueue_style( 'owl-main-css',  CSL_CAROUSEL_URL . '/assets/js/owl-carousel/owl.carousel.css', array(), '1.2' );
-	wp_enqueue_style( 'owl-theme-css', CSL_CAROUSEL_URL . '/assets/js/owl-carousel/owl.theme.css', array(), '1.2' );
+	
 }
 
 
