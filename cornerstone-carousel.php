@@ -13,7 +13,7 @@ Text Domain: __x__
 
 
 // Prevent direct access
-// if ( ! defined( 'WPINC' ) ) die;
+if ( ! defined( 'WPINC' ) ) die;
 
 define( 'CSL_CAROUSEL_PATH', plugin_dir_path( __FILE__ ) );
 define( 'CSL_CAROUSEL_URL', plugin_dir_url( __FILE__ ) );
