@@ -64,8 +64,8 @@ return array(
 		'options' => array(
 			'element' => 'csl-carousel-item',
 			'newTitle' => __('Carousel Item %s', csl18n()),
-			'floor' => 1,
-			'capacity' => 50,
+			'floor' => 2,
+			'capacity' => 100,
 			'title_field' => 'heading'
 		),
 		'context' => 'content',
