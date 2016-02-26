@@ -18,7 +18,7 @@ class CSL_Carousel {
 		// shortcodes work. If you have trouble with element presentation, try
 		// removing this flag.
 		return array(
-			'dynamic_child' => true
+			'dynamic_child' => false
 		);
 	}
 	

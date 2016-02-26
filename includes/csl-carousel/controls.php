@@ -70,9 +70,9 @@ return array(
 		),
 		'context' => 'content',
 		'suggest' => array(
-			array( 'heading' => __('First Item', csl18n()) ),
-			array( 'heading' => __('Second Item', csl18n()) ),
-			array( 'heading' => __('Third Item', csl18n()) ),
+			array( 'heading' => __('Carousel Item 1', csl18n()) ),
+			array( 'heading' => __('Carousel Item 2', csl18n()) ),
+			array( 'heading' => __('Carousel Item 3', csl18n()) ),
 		)
 	)
 

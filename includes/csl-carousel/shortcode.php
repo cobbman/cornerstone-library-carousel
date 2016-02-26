@@ -88,7 +88,7 @@ $carouselData = array(
     'pause_hover' => $pause_hover,
     'valign'      => $auto_valign
 );
-wp_localize_script( 'csl-carousel-js', 'php_vars', $carouselData );
+// wp_localize_script( 'csl-carousel-js', 'php_vars', $carouselData );
 ?>
 <script type="text/javascript">
 

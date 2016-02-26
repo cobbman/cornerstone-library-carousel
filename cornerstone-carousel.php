@@ -46,6 +46,6 @@ function csl_carousel_register_elements() {
 }
 
 function cornerstone_library_icon_map() {
-	$icon_map['csl-carousel'] = CSL_CAROUSEL_URL . '/assets/svg/icons.svg';
+	$icon_map['default'] = CSL_CAROUSEL_URL . '/assets/svg/icons.svg';
 	return $icon_map;
 }

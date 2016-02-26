@@ -13,7 +13,7 @@
     "pagebuilder"
   ],
   "license": "MIT",
-  "homepage": "//cornerstonelibrary.com",
+  "homepage": "http://cornerstonelibrary.com",
   "private": true,
   "ignore": [
     "**/.*",
