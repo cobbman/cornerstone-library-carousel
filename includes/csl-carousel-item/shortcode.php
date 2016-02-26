@@ -4,7 +4,7 @@
  * Shortcode: CSL Carousel ITEM
  */
 
-$class = 'csl-carousel-item ' . $class;
+$class = 'item ' . $class;
 ?>
 
 <div <?php echo cs_atts( array( 'id' => $id, 'class' => $class, 'style' => $style ) ); ?>>

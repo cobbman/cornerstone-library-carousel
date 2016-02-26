@@ -13,13 +13,11 @@
 
 $randnum = rand(0,5000); // doing this for now to namespace multiple elements on the same page. TODO: use a session var, transient or something else.
 
-$pause_hover = true;
-$auto_valign = true;
-
 // Class, ID, Styles
-$carousel_id = "carousel-id-" . $randnum;
+$carousel_id = "csl-carousel-".$randnum;
 $class       = "csl-carousel " . $class;
-$id          = $carousel_id . " " . $id;
+
+$pause_hover = ( $pause_hover = 1 ? "true" : "false");
 
 switch ( $pagination_type ) {
   case 'dots':
@@ -68,48 +66,30 @@ switch ( $pagination_type ) {
 ?>
 
 <div <?php echo cs_atts( array( 'id' => $id, 'class' => $class, 'style' => $style ) ); ?>>
-	<?php echo do_shortcode( $content ); ?>
+  <div id="<?= $carousel_id ?>">
+    <?php echo do_shortcode( $content ); ?>
+  </div>
 </div>
-
 
 <?php
 /*
- * => LOCALIZE SCRIPT
+ * => SCRIPTS
  * ---------------------------------------------------------------------------*/
 
-$carousel_id = "#" . $carousel_id;
-
-$carouselData = array(
-  'carouselID'    => $carousel_id,
-    'items'       => $max_visible_items,
-    'nav'         => $nav,
-    'dots'        => $dots,
-    'nums'        => $nums,
-    'pause_hover' => $pause_hover,
-    'valign'      => $auto_valign
-);
-// wp_localize_script( 'csl-carousel-js', 'php_vars', $carouselData );
+add_action( 'wp_enqueue_scripts', 'csl_carousel_scripts');
 ?>
 <script type="text/javascript">
 
   jQuery(document).ready(function($) {
-    $('<?= $carousel_id ?>').owlCarousel({
+    $("<?= '#'.$carousel_id ?>").owlCarousel({
       autoPlay: true,
       items: <?= $max_visible_items ?>,
       navigation: <?= $nav ?>,
       pagination: <?= $dots ?>,
       paginationNumbers: <?= $nums ?>,
-      stopOnHover: <?= $pause_hover ?>
+      stopOnHover: <?= $pause_hover ?>,
     });
   });
 </script> 
-<?php
-
-/*
- * => SCRIPTS
- * ---------------------------------------------------------------------------*/
-
-// add_action( 'wp_enqueue_scripts', 'csl_carousel_scripts');
-
 
 
