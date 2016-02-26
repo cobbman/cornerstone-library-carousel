@@ -12,9 +12,10 @@ Text Domain: __x__
 */
 
 
-// Prevent direct access
+/* Prevent direct access */
 if ( ! defined( 'WPINC' ) ) die;
 
+/* Paths */
 define( 'CSL_CAROUSEL_PATH', plugin_dir_path( __FILE__ ) );
 define( 'CSL_CAROUSEL_URL', plugin_dir_url( __FILE__ ) );
 
@@ -25,8 +26,10 @@ add_action( 'cornerstone_register_elements', 'csl_carousel_register_elements' );
 /* Add Icon Map */
 add_filter( 'cornerstone_icon_map', 'cornerstone_library_icon_map');
 
-/* scripts action is declared in includes/csl-carousel/shortcode.php */
+/* scripts */
 add_action( 'wp_enqueue_scripts', 'csl_carousel_scripts');
+
+
 
 /*
  * => FUNCTIONS

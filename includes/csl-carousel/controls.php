@@ -17,6 +17,16 @@ return array(
     'suggest' => __( '3', csl18n() ),
 	),
 
+	// Auto Play
+
+	'auto_play' => array(
+		'type'    => 'toggle',
+		'ui' => array(
+			'title'   => __( 'Auto Play', csl18n() ),
+			'tooltip' => __( 'Will automatically play the carousel', csl18n() ),
+		)
+	),
+
 	// Auto Vertial Align
 
 	'auto_valign' => array(
