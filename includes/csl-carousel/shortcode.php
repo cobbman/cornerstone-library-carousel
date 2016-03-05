@@ -93,6 +93,7 @@ switch ( $pagination_type ) {
       pagination: <?= $dots ?>,
       paginationNumbers: <?= $nums ?>,
       stopOnHover: <?= $pause_hover ?>,
+      lazyLoad : true
     });
     <?php if ( $auto_valign ) : ?>
       /* Auto Valign */
