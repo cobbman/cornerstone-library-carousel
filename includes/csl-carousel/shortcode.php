@@ -100,7 +100,7 @@ switch ( $pagination_type ) {
       var elem = "<?= '#'.$carousel_id ?>";
       var height = $(elem+" .owl-wrapper-outer").height();
       $(elem+" .owl-item").css({
-        'height'          : height,
+        'min-height'          : height,
         'display'         : 'flex',
         'align-items'     : 'center',
         'justify-content' : 'center'
