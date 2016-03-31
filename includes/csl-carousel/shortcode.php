@@ -20,7 +20,7 @@ $class       = "csl-carousel " . $class;
 // Toggle
 $auto_play   = ( ($auto_play   == 1) ? "true" : "false" );
 $auto_valign = ( ($auto_valign == 1) ? true : false );
-$loop        = ( ($loop == 1) ? true : false );
+$loop        = ( ($loop == 1) ? "true" : "false" );
 $pause_hover = ( ($pause_hover == 1) ? "true" : "false" );
 
 // Pagination

@@ -3,7 +3,7 @@
 Plugin Name: Cornerstone Library: Carousel
 Plugin URI:  http://bigwilliam.com/
 Description: Adds a carousel element to the Cornerstone Page builder. Download plugin at <a href="http://cornerstonelibrary.com" target="_blank">Cornerstone Library</a>.
-Version:     3.1
+Version:     3.1.1
 Author:      BigWilliam
 Author URI:  http://bigwilliam.com
 Author Email: hello@bigwilliam.com
