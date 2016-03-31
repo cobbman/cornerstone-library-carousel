@@ -27,6 +27,16 @@ return array(
 		)
 	),
 
+	// Loop (instead of rewind)
+
+	'loop' => array(
+		'type'    => 'toggle',
+		'ui' => array(
+			'title'   => __( 'Loop', csl18n() ),
+			'tooltip' => __( 'Instead of rewinding at the end, simulate eternal looping.', csl18n() ),
+		)
+	),
+
 	// Auto Vertial Align
 
 	'auto_valign' => array(

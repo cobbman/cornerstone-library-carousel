@@ -19,7 +19,8 @@ $class       = "csl-carousel " . $class;
 
 // Toggle
 $auto_play   = ( ($auto_play   == 1) ? "true" : "false" );
-$auto_valign = ( ($auto_valign == 1) ? true   : false   );
+$auto_valign = ( ($auto_valign == 1) ? true : false );
+$loop        = ( ($loop == 1) ? true : false );
 $pause_hover = ( ($pause_hover == 1) ? "true" : "false" );
 
 // Pagination
@@ -88,12 +89,13 @@ switch ( $pagination_type ) {
   jQuery(document).ready(function($) {
     $("<?= '#'.$carousel_id ?>").owlCarousel({
       autoPlay: <?= $auto_play ?>,
+      loop: <?= $loop ?>,
       items: <?= $max_visible_items ?>,
       navigation: <?= $nav ?>,
       pagination: <?= $dots ?>,
       paginationNumbers: <?= $nums ?>,
-      stopOnHover: <?= $pause_hover ?>,
-      lazyLoad : true
+      stopOnHover: <?= $pause_hover ?>
+      // lazyLoad : true
     });
     <?php if ( $auto_valign ) : ?>
       /* Auto Valign */
