@@ -77,6 +77,16 @@ return array(
 		),
 	),
 
+	// Slide by number of items
+	'slide_by' => array(
+		'type'    => 'number',
+		'ui' => array(
+			'title'   => __( 'Slide to no. of items', csl18n() ),
+			'tooltip' => __( 'Carousel will move based on what is specified here.', csl18n() ),
+		),
+		'suggest' => __( '3', csl18n() ),
+	),
+
 	// Carousel Items
 
 	'elements' => array(

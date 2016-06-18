@@ -13,5 +13,6 @@ return array(
 	'loop'              => false,
 	'auto_valign'       => false,
 	'pause_hover'       => false,
-	'pagination_type'   => 'none'
+	'pagination_type'   => 'none',
+	'slide_by'			=> 'page' // Navigation slide by x. 'page' string can be set to slide by page.
 );

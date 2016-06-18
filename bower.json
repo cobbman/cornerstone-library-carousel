@@ -23,6 +23,6 @@
     "tests"
   ],
   "dependencies": {
-    "OwlCarousel": "^1.3.2"
+    "owl.carousel": "^2.1.5"
   }
 }
