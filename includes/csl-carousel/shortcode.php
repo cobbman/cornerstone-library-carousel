@@ -71,7 +71,7 @@ switch ( $pagination_type ) {
 ?>
 
 <div <?php echo cs_atts( array( 'id' => $id, 'class' => $class, 'style' => $style ) ); ?>>
-  <div id="<?= $carousel_id ?>">
+  <div id="<?= $carousel_id ?>" class="owl-carousel owl-theme">
     <?php echo do_shortcode( $content ); ?>
   </div>
 </div>
@@ -85,22 +85,27 @@ switch ( $pagination_type ) {
 // add_action( 'wp_enqueue_scripts', 'csl_carousel_scripts');
 ?>
 <script type="text/javascript">
-
   jQuery(document).ready(function($) {
     $("<?= '#'.$carousel_id ?>").owlCarousel({
-      autoPlay: <?= $auto_play ?>,
+      autoplay: <?= $auto_play ?>,
       loop: <?= $loop ?>,
       items: <?= $max_visible_items ?>,
-      navigation: <?= $nav ?>,
-      pagination: <?= $dots ?>,
-      paginationNumbers: <?= $nums ?>,
-      stopOnHover: <?= $pause_hover ?>
-      // lazyLoad : true
+      autoplayHoverPause: <?= $pause_hover ?>,
+      slideBy: <?= is_numeric($slide_by) ? $slide_by : "'{$slide_by}'" ?>,
+      nav: <?= $nav ?>,
+      dotsEach: <?= is_numeric($slide_by) ? 'true' : 'false' ?>,
+      dots: <?= $dots ?>
+      <?php
+        // TODO: In order to display the page numbers set `dotData` to true and follow
+        //  this tip: https://github.com/OwlCarousel2/OwlCarousel2/issues/158#issuecomment-56747066
+        // dotData: true
+      ?>
     });
+
     <?php if ( $auto_valign ) : ?>
       /* Auto Valign */
       var elem = "<?= '#'.$carousel_id ?>";
-      var height = $(elem+" .owl-wrapper-outer").height();
+      var height = $(elem+" .owl-stage-outer").height();
       $(elem+" .owl-item").css({
         'min-height'          : height,
         'display'         : 'flex',
