@@ -11,7 +11,7 @@ return array(
 	'max_visible_items' => array(
 		'type'    => 'number',
 		'ui' => array(
-			'title'   => _( 'Max visible items', csl18n() ),
+			'title'   => __( 'Max visible items', csl18n() ),
 			'tooltip' => __( 'Carousel will automatically show less items to fit smaller screens. Limit the max amount here.', csl18n() ),
 		),
     'suggest' => __( '3', csl18n() ),
