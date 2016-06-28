@@ -87,7 +87,7 @@ switch ( $pagination_type ) {
 <script type="text/javascript">
   jQuery(document).ready(function($) {
     $("<?= '#'.$carousel_id ?>").owlCarousel({
-      autoPlay: <?= $auto_play ?>,
+      autoplay: <?= $auto_play ?>,
       loop: <?= $loop ?>,
       items: <?= $max_visible_items ?>,
       autoplayHoverPause: <?= $pause_hover ?>,
