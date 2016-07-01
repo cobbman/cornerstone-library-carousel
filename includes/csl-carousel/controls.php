@@ -17,6 +17,17 @@ return array(
     'suggest' => __( '3', csl18n() ),
 	),
 
+	// Slide by number of items
+
+	'slide_by' => array(
+		'type'    => 'number',
+		'ui' => array(
+			'title'   => __( 'Slide to no. of items', csl18n() ),
+			'tooltip' => __( 'Carousel will move based on what is specified here.', csl18n() ),
+		),
+		'suggest' => __( '3', csl18n() ),
+	),
+
 	// Auto Play
 
 	'auto_play' => array(
@@ -68,14 +79,16 @@ return array(
 		'options' => array(
 			'choices' => array(
         array( 'value' => 'none',        'label' => __( 'None', csl18n() ) ),
-        array( 'value' => 'dots',        'label' => __( 'Dots Only', csl18n() ) ),
-        array( 'value' => 'dots_nav',    'label' => __( 'Dots and Prev/Next', csl18n() ) ),
-        array( 'value' => 'numbers',     'label' => __( 'Numbers Only', csl18n() ) ),
-        array( 'value' => 'numbers_nav', 'label' => __( 'Numbers and Prev/Next', csl18n() ) ),
+        // array( 'value' => 'dots',        'label' => __( 'Dots Only', csl18n() ) ),
+        // array( 'value' => 'dots_nav',    'label' => __( 'Dots and Prev/Next', csl18n() ) ),
+        // array( 'value' => 'numbers',     'label' => __( 'Numbers Only', csl18n() ) ),
+        // array( 'value' => 'numbers_nav', 'label' => __( 'Numbers and Prev/Next', csl18n() ) ),
         array( 'value' => 'prev_next',   'label' => __( 'Prev/Next Only', csl18n() ) )
       ),
 		),
 	),
+
+	
 
 	// Carousel Items
 
