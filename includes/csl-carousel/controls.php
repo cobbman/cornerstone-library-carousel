@@ -23,9 +23,20 @@ return array(
 		'type'    => 'number',
 		'ui' => array(
 			'title'   => __( 'Slide to no. of items', csl18n() ),
-			'tooltip' => __( 'Carousel will move based on what is specified here.', csl18n() ),
+			'tooltip' => __( 'Number of items the carousel scrolls to.', csl18n() ),
 		),
 		'suggest' => __( '3', csl18n() ),
+	),
+
+	// Scroll slide speed
+
+	'scroll_speed' => array(
+		'type'    => 'number',
+		'ui' => array(
+			'title'   => __( 'Scroll speed', csl18n() ),
+			'tooltip' => __( 'Carousel will move based on what is specified here. The greater the number the slower the carousel moves.', csl18n() ),
+		),
+		'suggest' => __( '500', csl18n() ),
 	),
 
 	// Auto Play

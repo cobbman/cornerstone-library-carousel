@@ -94,6 +94,7 @@ switch ( $pagination_type ) {
       slideBy: <?= is_numeric($slide_by) ? $slide_by : "'{$slide_by}'" ?>,
       nav: <?= $nav ?>,
       dotsEach: <?= is_numeric($slide_by) ? 'true' : 'false' ?>,
+      smartSpeed: <?= $scroll_speed; ?>,
       dots: <?= $dots ?>
       <?php
         // TODO: In order to display the page numbers set `dotData` to true and follow
